@@ -8,13 +8,14 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
-  "dependencies": {
-    "cross-env": "^5.2.0",
+  "devDependencies": {
+    "cross-env": "^5.2.1",
+    "cssnano": "^4.1.10",
+    "glob-all": "^3.2.1",
     "laravel-mix": "^5.0.1",
     "laravel-mix-purgecss": "^5.0.0-rc.1",
+    "postcss-cli": "^8.3.0",
+    "postcss": "^8.2.4",
     "tailwindcss": "^1.9.6"
-  },
-  "devDependencies": {
-    "glob-all": "^3.2.1"
   }
 }
