@@ -60,8 +60,10 @@
 
 <main role="main" class="container mx-auto px-4 lg:p-0">
   <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-  {{ page.content }}
+  <div class="flex justify-between mt-6">
+    <div class="w-9/12">{{ page.content }}</div>
+    <div class="w-2/12">{{ page.sidebar }}</div>
+  </div>
 </main>
 
 {% if page.footer %}

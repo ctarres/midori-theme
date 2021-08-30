@@ -1,0 +1,20 @@
+name: Midori
+description: A starter kit theme for Drupal 8 and Tailwind CSS.
+core: 8.x
+core_version_requirement: ^8 || ^9
+type: theme
+base theme: stable
+libraries:
+  - midori/global-styling
+
+regions:
+  page_top: 'Page top'
+  header: 'Header'
+  primary_menu: 'Primary menu'
+  highlighted: 'Highlighted'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  sidebar: 'Sidebar'
+  help: 'Help'
+  footer: 'Footer'
+  page_bottom: 'Page bottom'

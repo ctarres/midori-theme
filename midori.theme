@@ -8,8 +8,8 @@
 /**
  * Implements hook_preprocess_HOOK().
  */
-function tailwindcss_preprocess_block(&$variables) {
-  if (tailwindcss_get_active_theme() == 'tailwindcss' && $variables['base_plugin_id'] == 'system_branding_block') {
+function midori_preprocess_block(&$variables) {
+  if (midori_get_active_theme() == 'midori' && $variables['base_plugin_id'] == 'system_branding_block') {
     $variables['site_logo'] = '';
     if ($variables['content']['site_logo']['#access'] && $variables['content']['site_logo']['#uri']) {
       $variables['site_logo'] = str_replace('.svg', '.png', $variables['content']['site_logo']['#uri']);
@@ -24,6 +24,14 @@ function tailwindcss_preprocess_block(&$variables) {
  * @return string
  *   The name of the active theme.
  */
-function tailwindcss_get_active_theme() {
+function midori_get_active_theme() {
   return \Drupal::service('theme.manager')->getActiveTheme()->getName();
+}
+
+/**
+ * Implements theme_suggestions_form_element_alter().
+ */
+function midori_theme_suggestions_form_element_alter(array &$suggestions, array $variables, $hook) {
+  $suggestions[] = $hook . '__' . $variables['element']['#id'];
+  $suggestions[] = $hook . '__' . $variables['element']['#type'];
 }

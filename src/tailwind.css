@@ -40,6 +40,22 @@ input {
   @apply border border-gray-500
 }
 
+.form-email {
+  @apply w-full
+}
+
+.form-text {
+  @apply w-full
+}
+
+textarea {
+  @apply w-full border border-gray-500
+}
+
+.bef-links {
+  @apply pl-2
+}
+
 .block,
 .node {
   @apply mb-4
@@ -51,6 +67,185 @@ input {
   @apply mb-4 leading-normal
 }
 
+.node-content p {
+  @apply my-4 text-base font-normal text-gray-800
+}
+
+@layer base {
+  h1 {
+    @apply text-6xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+  h4 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-black;
+  }
+  a:hover {
+    @apply text-gray-700;
+  }
+
+  a.is-active {
+    @apply pb-2 border-b-2 border-gray-700;
+  }
+}
+
+.menu-local-task__link a {
+  @apply text-pink-400;
+}
+
+.menu-local-task__link a.is-active {
+  @apply text-pink-400 border-pink-400;
+}
+
+.form-item-field-tags-target-id {
+  @apply flex flex-col;
+}
+
+.form-item-field-tags-target-id .form-select {
+  @apply bg-transparent;
+}
+
+.form-item-field-tags-target-id label {
+  @apply mb-4 uppercase text-sm tracking-widest;
+}
+
+.form-item-field-tags-target-id a {
+  @apply py-2 text-sm text-black cursor-pointer;
+}
+
+.form-item-field-tags-target-id a:hover {
+  @apply text-gray-700;
+}
+
+.my-social svg:hover circle {
+  @apply fill-current text-gray-700;
+}
+
+.my-social--footer svg:hover circle {
+  @apply fill-current text-gray-200;
+}
+
+.contact-form {
+  @apply mx-auto w-2/4;
+}
+
+/** Main menu **/
+.main-menu-mobile {
+  position: relative;
+  top: 10px;
+  left: 0;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.main-menu-mobile a {
+  text-decoration: none;
+  color: #232323;
+
+  transition: color 0.3s ease;
+}
+
+.main-menu-mobile input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+.main-menu-mobile span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #000;
+  border-radius: 3px;
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+.main-menu-mobile span:first-child {
+  transform-origin: 0% 0%;
+}
+
+.main-menu-mobile span:nth-last-child(2){
+  transform-origin: 0% 100%;
+}
+
+.main-menu-mobile input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #000;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+.main-menu-mobile input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+.main-menu-mobile input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+.main-menu-mobile .main-menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+
+  background: #fff;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.main-menu-mobile .main-menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+.main-menu-mobile input:checked ~ ul {
+  transform: none;
+}
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.

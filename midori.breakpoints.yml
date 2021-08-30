@@ -1,0 +1,41 @@
+midori.s:
+  label: Phone
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+midori.sm:
+  label: Phone XL
+  mediaQuery: '(min-width: 640px)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+midori.md:
+  label: Tablet
+  mediaQuery: '(min-width: 768px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+midori.lg:
+  label: Tablet Xl
+  mediaQuery: '(min-width: 1024px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+midori.xl:
+  label: Desktop
+  mediaQuery: '(min-width: 1280px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+midori.2xl:
+  label: Desktop XL
+  mediaQuery: '(min-width: 1536px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
